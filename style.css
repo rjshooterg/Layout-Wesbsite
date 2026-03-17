@@ -1,0 +1,1274 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    background-color: white;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    background: black;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.bar img {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    margin-left: 10px;
+    transform: rotate(-25deg) skew(17deg);
+    box-shadow: -10px 10px 5px white;
+}
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+}
+
+.nav-links li:hover>a {
+    color: red;
+}
+
+/* DROPDOWN */
+.dropdown-parent {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    background: black;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 20px;
+    min-width: 130px;
+    margin-left: -20px;
+}
+
+.dropdown li {
+    margin: 10px 0;
+}
+
+.dropdown-parent:hover .dropdown {
+    display: block;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+    height: 40px;
+    width: 45px;
+    background: black;
+    border: 2px solid red;
+    border-radius: 100%;
+    color: white;
+    cursor: pointer;
+}
+
+/* HAMBURGER BUTTON (MOBILE) */
+.menu-btn {
+    display: none;
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: black;
+        padding: 20px 0;
+    }
+
+    /* to show after clicking on hum burger in mobile */
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .dropdown {
+        position: static;
+        background: rgb(20, 20, 20);
+    }
+}
+
+/* home */
+/* HOME PAGE ONLY */
+
+/* Main container holds navbar + content */
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+}
+
+/* Welcome section */
+.wel {
+    font-family: "Poppins", sans-serif;
+    margin: 20px auto;
+    max-width: 900px;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+.wel h4 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.wel p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* About section fml;dsmflmdslf;msd;lfmdslmfl;sdmf;lmsdf;lmsdlfmlsdmflsdmflmsdl;fmsl;dmf */
+.sub {
+    font-family: "Poppins", sans-serif;
+    margin: 20px auto;
+    max-width: 850px;
+    text-align: center;
+    color: black;
+    padding: 10px 15px;
+}
+
+.sub h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.sub p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Images section */
+.img {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.img img {
+    width: 260px;
+    max-width: 100%;
+    /* responsive */
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px #444;
+    transition: 0.3s;
+}
+
+.img img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== MOBILE RESPONSIVE RULES ===== */
+@media (max-width: 768px) {
+
+    .wel h4 {
+        font-size: 26px;
+    }
+
+    .sub h4 {
+        font-size: 20px;
+    }
+
+    .wel p,
+    .sub p {
+        font-size: 14px;
+    }
+
+    .img img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .wel {
+        margin: 10px 5px;
+    }
+
+    .wel h4 {
+        font-size: 22px;
+    }
+
+    .sub {
+        margin: 10px 8px;
+    }
+
+    .sub h4 {
+        font-size: 18px;
+    }
+
+    .img img {
+        width: 150px;
+    }
+
+}
+
+/* =========================================
+   TO DO LIST PAGE STYLES (Global & Premium)
+   ========================================= */
+.todo-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    min-height: calc(100vh - 220px);
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.todo-container {
+    width: 100%;
+    max-width: 600px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    /* Soft, deep shadow */
+    padding: 30px;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.todo-container:hover {
+    transform: translateY(-3px);
+}
+
+/* Input Row */
+.todo-input-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.todo-input-row input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease;
+    background: #fdfdfd;
+}
+
+.todo-input-row input:focus {
+    border-color: #1a1a1a;
+    outline: none;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.todo-input-row button {
+    padding: 0 25px;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.2s ease;
+    font-size: 15px;
+}
+
+.todo-input-row button:hover {
+    background: #333;
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* List Items */
+.todo-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+}
+
+.todo-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    transform: translateX(2px);
+    border-color: #eee;
+}
+
+.todo-item label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex: 1;
+    gap: 12px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Custom Checkbox Look */
+.todo-check {
+    width: 20px;
+    height: 20px;
+    accent-color: #1a1a1a;
+    cursor: pointer;
+}
+
+/* Text styling when done */
+.todo-item.done .todo-text {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+.todo-item.done {
+    background: #f9fafb;
+    border-color: transparent;
+}
+
+/* Delete Button */
+.delete-btn {
+    background: #fee2e2;
+    color: #ef4444;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    transition: background 0.2s;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    background: #fecaca;
+    color: #dc2626;
+}
+
+/* Bottom Action Buttons */
+.todo-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+#clearCompleted {
+    background: #f3f4f6;
+    color: #4b5563;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+#clearCompleted:hover {
+    background: #e5e7eb;
+    color: #1f2937;
+}
+
+#clearAll {
+    background: #fff1f2;
+    color: #be123c;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+#clearAll:hover {
+    background: #ffe4e6;
+    color: #9f1239;
+}
+
+
+/*login paage*/
+.form {
+    margin: 40px auto;
+    width: 100%;
+    max-width: 250px;
+    /* responsive max size */
+    background: #f9f9f9ef;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form div button {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.form div label {
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form input {
+    display: block;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    height: 15px;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 2px solid #ddd;
+    box-sizing: border-box;
+}
+
+.form a {
+    text-decoration: none;
+    color: #007bff;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Responsive for small screens */
+@media (max-width: 480px) {
+    .form {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .form div button {
+        padding: 10px;
+    }
+
+    .form input {
+        padding: 8px;
+    }
+}
+
+/* transform: rotate(-5deg) skew(-15deg)
+translate(0,0); */
+
+
+/* .loginpage table:before
+{
+  content: " ";
+
+  position: absolute;
+  background-color: rgb(121, 180, 203);
+  transform: 0.5s;
+  transform: rotate(0deg) skewY(45deg);
+} */
+.loginpage table tr,
+td {
+    border: none;
+}
+
+.loginpage table tr td button {
+    margin-left: 60px;
+    margin-top: 10px;
+    padding: 5px;
+    margin: 10px;
+    border: black;
+    background-color: black;
+    border-radius: 15px;
+    color: white;
+    width: 80px;
+    /* transform: rotate(1deg) skew(-20deg)
+translate(0,0);
+box-shadow: 5px 5px 5px 1px black;*/
+}
+
+.input {
+
+    height: 20px;
+    border: black;
+    border-radius: 5px;
+}
+
+/* footer */
+.footer {
+    background: black;
+    width: 100%;
+    color: #bbb;
+    padding: 30px 20px;
+    text-align: center;
+    /* centers all text (best for footers) */
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.footer h5 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.footer p {
+    margin: 10px 0;
+    color: #bbb;
+}
+
+.footer a {
+    color: #3fa9f5;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE FOOTER */
+@media (max-width: 768px) {
+    .footer {
+        padding: 25px 15px;
+    }
+
+    .footer h5 {
+        font-size: 14px;
+    }
+}
+
+/* page */
+/* datesheet page*/
+.subtitle {
+    margin: auto 0;
+    text-align: center;
+
+}
+
+.main2 {
+    display: flex;
+    margin: 30px;
+
+
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.main2 h1 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+    font-family: "Poppins", sans-serif;
+}
+
+.formdate {
+
+    justify-content: center;
+    margin: 20px;
+    width: 100%;
+}
+
+/* DATE HEET TABLE STYLING */
+.formdate table {
+    width: 90%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.formdate table th {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    color: white;
+    padding: 18px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.formdate table td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #e0e0e0;
+    font-family: "Poppins", sans-serif;
+}
+
+.formdate table tr:hover {
+    background-color: #f9f9f9;
+    transition: 0.3s ease;
+}
+
+.formdate table tr:last-child {
+    border-bottom: none;
+}
+
+/* INPUT FIELDS IN TABLE */
+.formdate input[type="text"],
+.formdate input[type="time"],
+.formdate select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    background-color: #fafafa;
+    transition: 0.3s ease;
+    box-sizing: border-box;
+}
+
+.formdate input[type="text"]:focus,
+.formdate input[type="time"]:focus,
+.formdate select:focus {
+    outline: none;
+    border-color: #1a1a1a;
+    background-color: white;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formdate select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    padding-right: 40px;
+    appearance: none;
+}
+
+/* SUBJECT COLUMN - BOLD & DARKER */
+.formdate table td:first-child {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* BUTTONS AT BOTTOM */
+.formdate table tr:last-child td {
+    padding: 20px 18px;
+    border-bottom: none;
+}
+
+.formdate input[type="reset"],
+.formdate input[type="submit"],
+.formdate input[type="button"] {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    transition: 0.3s ease;
+}
+
+.formdate input[type="submit"] {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    color: white;
+}
+
+.formdate input[type="submit"]:hover {
+    background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.formdate input[type="reset"] {
+    background: #f0f0f0;
+    color: #333;
+    margin-left: 10px;
+}
+
+.formdate input[type="reset"]:hover {
+    background: #e0e0e0;
+}
+
+/* DOWNLOAD BUTTON (for future JS) */
+.formdate input[type="button"] {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+    color: white;
+    margin-left: 10px;
+}
+
+.formdate input[type="button"]:hover {
+    background: linear-gradient(135deg, #ee5a52 0%, #ff6b6b 100%);
+    box-shadow: 0px 5px 15px rgba(255, 107, 107, 0.3);
+    transform: translateY(-2px);
+}
+
+/* BUTTON CONTAINER STYLING */
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    /* smaller gap between buttons */
+    margin-top: 12px;
+    /* much less space above buttons */
+    margin-bottom: 18px;
+    /* reduced bottom space */
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.btn {
+    padding: 10px 16px;
+    /* less padding -> less height */
+    height: 40px;
+    /* fixed smaller height */
+    border: none;
+    border-radius: 6px;
+    /* slightly smaller radius */
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.18s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 120px;
+    justify-content: center;
+}
+
+/* RESET BUTTON (smaller) */
+.btn-reset {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+
+/* DOWNLOAD BUTTON (smaller) */
+.btn-download {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+    color: white;
+    border: none;
+}
+
+/* SUBMIT BUTTON (smaller) */
+.btn-submit {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    color: white;
+    border: none;
+}
+
+/* Slightly reduced hover lift to match smaller size */
+.btn-reset:hover,
+.btn-download:hover,
+.btn-submit:hover {
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVE - TABLET */
+@media (max-width: 900px) {
+    .form-actions {
+        gap: 8px;
+        margin-top: 10px;
+        margin-bottom: 16px;
+    }
+
+    .btn {
+        padding: 9px 14px;
+        font-size: 13px;
+        min-width: 110px;
+        height: 38px;
+    }
+}
+
+/* RESPONSIVE - MOBILE */
+@media (max-width: 768px) {
+    .form-actions {
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 8px;
+        margin-bottom: 16px;
+        padding: 0 12px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px 12px;
+        font-size: 14px;
+        height: 44px;
+        /* slightly larger on touch devices */
+        min-width: unset;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-actions {
+        gap: 6px;
+        margin-top: 6px;
+        margin-bottom: 12px;
+        padding: 0 8px;
+    }
+
+    .btn {
+        padding: 9px 10px;
+        font-size: 13px;
+        height: 42px;
+        width: 100%;
+    }
+}
+
+/* CV PAGE STYLES (added) */
+.title {
+    width: 100%;
+    text-align: center;
+    margin: 18px 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.title h1 {
+    font-size: 34px;
+    color: #1a1a1a;
+    letter-spacing: 0.2px;
+    margin: 0;
+}
+
+/* CV container */
+.cv {
+    max-width: 1100px;
+    margin: 18px auto 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 14px 24px;
+    align-items: start;
+}
+
+/* Generic column block used across the CV form */
+.colum {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Section headings inside CV */
+.cv .colum h3,
+.cv .colum h4 {
+    margin: 6px 0;
+    font-size: 18px;
+    color: #111;
+    font-weight: 700;
+}
+
+/* Labels */
+.colum label {
+    font-size: 13px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Inputs, selects, textarea */
+.colum input[type="text"],
+.colum input[type="email"],
+.colum input[type="number"],
+.colum input[type="date"],
+.colum select,
+.colum textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1.5px solid #e6e6e6;
+    background: #fafafa;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.colum input:focus,
+.colum select:focus,
+.colum textarea:focus {
+    outline: none;
+    border-color: #1a1a1a;
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(26, 26, 26, 0.06);
+}
+
+/* Radio & checkbox row styling */
+.colum input[type="radio"],
+.colum input[type="checkbox"] {
+    margin-left: 8px;
+    transform: translateY(1px);
+    width: 16px;
+    height: 16px;
+}
+
+/* Work / Hobby groups span full width when needed */
+.cv .colum:nth-child(odd) {
+    /* subtle visual rhythm */
+}
+
+/* Buttons block */
+.btnform {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+    grid-column: 1 / -1;
+    /* make buttons span full width */
+    justify-content: flex-end;
+}
+
+.btnform button {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.btnform button[type="reset"] {
+    background: #f5f5f5;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+
+.btnform button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Make long forms single-column on small screens */
+@media (max-width: 900px) {
+    .cv {
+        grid-template-columns: 1fr;
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .btnform {
+        justify-content: center;
+    }
+
+    .title h1 {
+        font-size: 28px;
+    }
+}
+
+/* Tighten spacing for very small screens */
+@media (max-width: 480px) {
+    .cv {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .colum label {
+        font-size: 13px;
+    }
+
+    .colum input,
+    .colum select,
+    .colum textarea {
+        padding: 9px;
+        font-size: 13px;
+    }
+
+    .btnform button {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}
+
+/* ABOUT / CONTACT page styles */
+.about-hero {
+    max-width: 1100px;
+    margin: 24px auto;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 20px;
+    align-items: center;
+    padding: 18px;
+    box-sizing: border-box;
+}
+
+.about-hero h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.about-hero p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.about-hero img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    object-fit: cover;
+}
+
+/* mission cards */
+.about-mission {
+    max-width: 1100px;
+    margin: 8px auto 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 0 18px;
+    box-sizing: border-box;
+}
+
+.about-mission .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    font-family: "Poppins", sans-serif;
+    color: #222;
+}
+
+.about-mission .card h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #111;
+}
+
+.about-mission .card p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #444;
+}
+
+/* small-screen responsive */
+@media (max-width:900px) {
+    .about-hero {
+        grid-template-columns: 1fr;
+        padding: 12px;
+        gap: 14px;
+    }
+
+    .about-mission {
+        grid-template-columns: 1fr;
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .about-hero img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* reuse for contact page */
+.contact-hero,
+.contact-card {
+    /* if contact.html uses different names */
+    /* small defaults so contact page also looks good */
+}
+
+/* Contact form styles */
+.contact-hero {
+    max-width: 1100px;
+    margin: 24px auto 8px;
+    padding: 0 18px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.contact-hero h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    margin-bottom: 6px;
+    color: #111;
+}
+
+.contact-hero p {
+    color: #444;
+    margin-bottom: 6px;
+}
+
+.contact-form-section {
+    max-width: 800px;
+    margin: 8px auto 20px;
+    padding: 0 18px;
+    box-sizing: border-box;
+}
+
+.contact-form {
+    background: #fff;
+    padding: 14px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    display: grid;
+    gap: 8px;
+}
+
+.contact-form label {
+    font-weight: 600;
+    color: #222;
+    font-size: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1.5px solid #e6e6e6;
+    background: #fafafa;
+    font-size: 14px;
+}
+
+.contact-form button {
+    justify-self: end;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* contact info */
+.contact-info {
+    max-width: 800px;
+    margin: 10px auto 40px;
+    padding: 0 18px;
+    box-sizing: border-box;
+    color: #333;
+}
+
+.contact-info h2 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+/* responsive tweaks */
+@media (max-width: 900px) {
+
+    .contact-hero,
+    .contact-form-section,
+    .contact-info {
+        padding: 0 12px;
+    }
+
+    .contact-form button {
+        justify-self: stretch;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-hero h1 {
+        font-size: 22px;
+    }
+
+    .contact-form {
+        gap: 6px;
+        padding: 10px;
+    }
+}
+
+/* Layout Page Card Styling */
+.layout-card {
+    width: 280px;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layout-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.layout-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.layout-card.contain-img img {
+    object-fit: contain;
+    background: #000;
+    padding: 10px;
+}
+
+/* Update .img container for better alignment */
+.img {
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+}

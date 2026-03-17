@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Sheet - RJ Layouts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <!-- HEADER/NAVBAR -->
+        <div class="bar">
+            <a href="home.html"><img src="logo.png" alt="RJ Layouts Logo"></a>
+
+            <button class="menu-btn" id="menuBtn">&#9776;</button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home.html">Home</a></li>
+                <li class="dropdown-parent">
+                    <a href="Layout.html">Layout</a>
+                    <ul class="dropdown">
+                        <li><a href="cv.html">CV</a></li>
+                        <li><a href="datesheet.html">Date Sheet</a></li>
+                        <li><a href="timetable.html">Time Table</a></li>
+                        <li><a href="to do list.html">To Do</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About US</a></li>
+                <li><a href="contact.html">Contact US</a></li>
+                <li class="login-li">
+                    <a href="login.html"><button class="login-btn">Login</button></a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main2">
+            <!-- PAGE TITLE -->
+            <div class="datesheet-header">
+                <h1>Date Sheet Generator</h1>
+                <p class="subtitle">Create and download your custom date sheet</p>
+            </div>
+
+            <!-- DATESHEET FORM -->
+            <form class="formdate" id="dateSheetForm">
+                <div class="table-wrapper">
+                    <table class="datesheet-table" id="datesheetTable">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Day</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablebody">
+                            <!-- Subject Row 1 -->
+                            <tr class="subject-row" data-subject-id="1">
+                                <td>
+                                    <input type="text" class="subject-input" name="subject_1"
+                                        placeholder="Enter Subject" onclick="getVal(this)" readonly required>
+                                </td>
+                                <td>
+                                    <select class="day-select" name="day_1" required onkeydown="lock(event,this)">
+                                        <option value="">Select Day</option>
+                                        <option value="Monday">Monday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Thursday">Thursday</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Saturday">Saturday</option>
+                                        <option value="Sunday">Sunday</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="date" class="date-input" name="date_1" onkeydown="lock(event,this)"
+                                        required>
+                                </td>
+                                <td>
+                                    <input type="time" class="time-input" name="time_1" onkeydown="lock(event,this)"
+                                        required>
+                                </td>
+                            </tr>
+
+                            <!-- Subject Row 2 -->
+                            <tr class="subject-row" data-subject-id="2">
+                                <td>
+                                    <input type="text" class="subject-input" name="subject_2"
+                                        placeholder="Enter Subject" onclick="getVal(this)" readonly required>
+                                </td>
+                                <td>
+                                    <select class="day-select" name="day_2" required onkeydown="lock(event,this)">
+                                        <option value="">Select Day</option>
+                                        <option value="Monday">Monday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Thursday">Thursday</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Saturday">Saturday</option>
+                                        <option value="Sunday">Sunday</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="date" class="date-input" name="date_2" onkeydown="lock(event,this)"
+                                        required>
+                                </td>
+                                <td>
+                                    <input type="time" class="time-input" name="time_2" onkeydown="lock(event,this)"
+                                        required>
+                                </td>
+                            </tr>
+
+                            <!-- Subject Row 3 -->
+                            <tr class="subject-row" data-subject-id="3">
+                                <td>
+                                    <input type="text" class="subject-input" name="subject_3"
+                                        placeholder="Enter Subject" onclick="getVal(this)" readonly required>
+                                </td>
+                                <td>
+                                    <select class="day-select" name="day_3" required onkeydown="lock(event,this)">
+                                        <option value="">Select Day</option>
+                                        <option value="Monday">Monday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Thursday">Thursday</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Saturday">Saturday</option>
+                                        <option value="Sunday">Sunday</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="date" class="date-input" name="date_3" onkeydown="lock(event,this)"
+                                        required>
+                                </td>
+                                <td>
+                                    <input type="time" class="time-input" name="time_3" onkeydown="lock(event,this)"
+                                        required>
+                                </td>
+                            </tr>
+
+                            <!-- Subject Row 4 -->
+                            <tr class="subject-row" data-subject-id="4">
+                                <td>
+                                    <input type="text" class="subject-input" name="subject_4"
+                                        placeholder="Enter Subject" onclick="getVal(this)" readonly required>
+                                </td>
+                                <td>
+                                    <select class="day-select" name="day_4" required onkeydown="lock(event,this)">
+                                        <option value="">Select Day</option>
+                                        <option value="Monday">Monday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Thursday">Thursday</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Saturday">Saturday</option>
+                                        <option value="Sunday">Sunday</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="date" class="date-input" name="date_4" onkeydown="lock(event,this)"
+                                        required>
+                                </td>
+                                <td>
+                                    <input type="time" class="time-input" name="time_4" onkeydown="lock(event,this)"
+                                        required>
+                                </td>
+                            </tr>
+
+                            <!-- Subject Row 5 -->
+                            <tr class="subject-row" data-subject-id="5">
+                                <td>
+                                    <input type="text" class="subject-input" name="subject_5"
+                                        placeholder="Enter Subject" onclick="getVal(this)" readonly required>
+                                </td>
+                                <td>
+                                    <select class="day-select" name="day_5" required onkeydown="lock(event,this)">
+                                        <option value="">Select Day</option>
+                                        <option value="Monday">Monday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Thursday">Thursday</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Saturday">Saturday</option>
+                                        <option value="Sunday">Sunday</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="date" class="date-input" name="date_5" onkeydown="lock(event,this)"
+                                        required>
+                                </td>
+                                <td>
+                                    <input type="time" class="time-input" name="time_5" onkeydown="lock(event,this)"
+                                        required>
+                                </td>
+                            </tr>
+
+                            <!-- Subject Row 6 -->
+                            <tr class="subject-row" data-subject-id="6">
+                                <td>
+                                    <input type="text" class="subject-input" name="subject_6"
+                                        placeholder="Enter Subject" onclick="getVal(this)" readonly required>
+                                </td>
+                                <td>
+                                    <select class="day-select" name="day_6" required onkeydown="lock(event,this)">
+                                        <option value="">Select Day</option>
+                                        <option value="Monday">Monday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Thursday">Thursday</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Saturday">Saturday</option>
+                                        <option value="Sunday">Sunday</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="date" class="date-input" name="date_6" onkeydown="lock(event,this)"
+                                        required>
+                                </td>
+                                <td>
+                                    <input type="time" class="time-input" name="time_6" onkeydown="lock(event,this)"
+                                        required>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- BUTTON CONTAINER -->
+                <div class="form-actions">
+                    <button type="reset" class="btn btn-reset" id="resetBtn">
+                        ↺ Reset
+                    </button>
+                    <button type="button" class="btn btn-download" id="downloadBtn" onclick="window.print()">
+                        ⬇ Download/Print
+                    </button>
+                    <button type="submit" class="btn btn-submit" id="submitBtn">
+                        ✓ Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h5>Rj Layouts – Create your professional CVs and make your custom date sheets easily and quickly.</h5>
+            <p>
+                Stay connected with us for updates and new layout designs:<br>
+                🌐 <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a> | <a
+                    href="#">YouTube</a>
+            </p>
+            <p>© 2025 <b>Rj Layouts.</b> All Rights Reserved.<br>
+                Made with ❤️ by <b>Rj Layout Team.</b>
+            </p>
+        </div>
+    </footer>
+
+    <script src="logic.js"></script>
+</body>
+
+</html>
